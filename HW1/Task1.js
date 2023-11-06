@@ -1,3 +1,6 @@
+document.getElementById("AverageGrade").addEventListener("click",AverageGrade);
+document.getElementById("ClearValues").addEventListener("click",ClearValues);
+
 function CheckGrade(grade)
 {
 	if (grade < 6 && grade > 0)
@@ -14,8 +17,6 @@ function ClearErrors(items)
 {
 	for(let i=0; i< items.length; i++)
 	{
-		console.log(items[i]);
-		console.log("*");
 		items[i].innerText='';
 	}
 }
@@ -30,9 +31,9 @@ function ClearValue(items)
 
 function AverageGrade()
 {
-	var grades = document.getElementsByClassName("Grade");
-	var total = 0;
-	//console.log(grades);
+	let grades = document.getElementsByClassName("Grade");
+	let total = 0;
+	let average = 0;
 	for (let i=0; i < grades.length; i++)
 	{
 		if (CheckGrade(grades[i].value))
@@ -48,7 +49,16 @@ function AverageGrade()
 		}
 	}
 	ClearErrors(document.getElementsByClassName("warning-message"));
-	document.getElementById("result").innerText = (total/4);
+	average = total/grades.length;
+	document.getElementById("result").innerText = (average);
+	if(average > 3 && average <= 5)
+	{
+		document.getElementById("status").innerText = "PASS";
+	}
+	else if (average >= 1 && average <=3 )
+	{
+		document.getElementById("status").innerText = "FAILED";
+	}
 }
 
 function ClearValues()

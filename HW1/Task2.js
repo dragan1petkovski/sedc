@@ -1,3 +1,5 @@
+document.getElementById("multipication").addEventListener("click",multipication);
+
 function multipication()
 {
 	var num1 = Number(document.getElementById("num1").value);

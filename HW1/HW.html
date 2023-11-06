@@ -58,16 +58,19 @@
 						<div class="col-4">
 							<p class="text-end">Average Grade</p>
 						</div>
-						<div class="col-8">
+						<div class="col-4">
 							<p id="result"></p>
+						</div>
+						<div class="col-4">
+							<p id="status"></p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-6">
-							<input type="button" value="Calcuate Average Grade" class="btn btn-dark w-100" onclick="AverageGrade()"></input>
+							<input type="button" value="Calcuate Average Grade" class="btn btn-dark w-100" id="AverageGrade"></input>
 						</div>
 						<div class="col-6">
-							<input type="button" value="New Student" class="btn btn-dark w-100" onclick="ClearValues()"></input>
+							<input type="button" value="New Student" class="btn btn-dark w-100" id="ClearValues"></input>
 						</div>
 					</div>
 				</div>
@@ -83,7 +86,7 @@
 						<p class="text-end">Number1</p>
 					</div>
 					<div class="col-8">
-						<input type="number" class="form-control Grade" id="num1" > </input>
+						<input type="number" class="form-control" id="num1" > </input>
 					</div>
 				</div>
 				<div class="row">
@@ -91,7 +94,7 @@
 						<p class="text-end">Number2</p>
 					</div>
 					<div class="col-8">
-						<input type="number" class="form-control Grade" id="num2" > </input>
+						<input type="number" class="form-control" id="num2" > </input>
 					</div>
 				</div>
 				<div class="row">
@@ -103,10 +106,12 @@
 					</div>
 				</div>
 				<div class="row">
-						<input type="button" value="Multiplay" class="btn btn-dark w-100" onclick="multipication()"></input>
+						<input type="button" value="Multiplay" class="btn btn-dark w-100" id="multipication"></input>
 				</div>
 			</div>
 			
 		</div>
 	</body>
+	<script src="Task1.js"></script>
+	<script src="Task2.js"></script>
 </html>
