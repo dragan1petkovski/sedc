@@ -1,3 +1,9 @@
+document.getElementById("initfuction").addEventListener("click",initfuction);
+document.getElementById("countdown").addEventListener("click", function(){ countdown( document.getElementById('t2input').value ); });
+document.getElementById("TemperatureConverter").addEventListener("click",function() {TemperatureConverter(document.getElementById('t3input').value, document.getElementById('t3tm').value);});
+document.getElementById("Counttohundred").addEventListener("click", Counttohundred);
+document.getElementById("checkfordivision").addEventListener("click", function(){checkfordivision(document.getElementById('t5number1').value, document.getElementById('t5number2').value);});
+
 //Task 1
 let totalcoins = 0;
 
@@ -17,7 +23,6 @@ function coindestributions(numberofcoints, coinmap)
 
 function initfuction()
 {
-
 	const coinmap = [1,5,10,20,50];
 	totalcoins = 0;
 	coindestributions(Number(document.getElementById("coininput").value),coinmap);
