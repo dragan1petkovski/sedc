@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Ne Ljutise coeche</title>
+        <title>Не лути се човече</title>
+        
     </head>
     <body>
-        <table border="2">
+        <div style="text-align: center;">
+            <h1>Не лути се човече</h1>
+        </div>
+        <div style="max-width: 50; float:left ">
+            <div>
+                <p><strong>NOTE: </strong>The game is under constuction</p>
+            </div>
+            <div>
+                <p>Започнете нова игра</p>
+                <button id="newgame">Нова игра</button>
+            </div>
+            <p id="player"></p>
+            <div style="margin-bottom: 10px;">
+                <button id="kocka" >Сврти ја коцката</button>
+            </div>
+            <div id="broj">
+            </div>
+        </div>
+        <div style="max-width: 50%; margin-left: 50%;">
+        <table border="2" >
             <tbody>
                 <tr>
                     <td style="background-color: red;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td style="background-color: red;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td colspan="2" rowspan="2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="Start.png" /> </td>
+                    <td id="01"><img src="circle.PNG" /> </td>
+                    <td id="02"><img src="circle.PNG" /> </td>
+                    <td id="03"><img src="Start.png" /> </td>
                     <td colspan="2" rowspan="2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td style="background-color: blue;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td style="background-color: blue;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -20,39 +40,39 @@
                 <tr>
                     <td style="background-color: red;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td style="background-color: red;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="39"><img src="circle.PNG" /> </td>
                     <td style="background-color: blue;"></td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="04"><img src="circle.PNG" /> </td>
                     <td style="background-color: blue;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td style="background-color: blue;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 </tr>
                 <tr>
                     <td colspan="4" rowspan="2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="38"><img src="circle.PNG" /> </td>
                     <td style="background-color: blue;"></td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="05"><img src="circle.PNG" /> </td>
                     <td colspan="4" rowspan="2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 </tr>
                 <tr>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="37"><img src="circle.PNG" /> </td>
                     <td style="background-color: blue;"></td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="06"><img src="circle.PNG" /> </td>
                 </tr>
                 <tr>
-                    <td><img src="Start.png" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="36"><img src="Start.png" /> </td>
+                    <td id="35"><img src="circle.PNG" /> </td>
+                    <td id="34"><img src="circle.PNG" /> </td>
+                    <td id="33"><img src="circle.PNG" /> </td>
+                    <td id="32"><img src="circle.PNG" /> </td>
                     <td style="background-color: blue;"></td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="07"><img src="circle.PNG" /> </td>
+                    <td id="08"><img src="circle.PNG" /> </td>
+                    <td id="09"><img src="circle.PNG" /> </td>
+                    <td id="10"><img src="circle.PNG" /> </td>
+                    <td id="11"><img src="circle.PNG" /> </td>
                 </tr>
                 <tr>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="31"><img src="circle.PNG" /> </td>
                     <td style="background-color: red;"></td>
                     <td style="background-color: red;"></td>
                     <td style="background-color: red;"></td>
@@ -62,40 +82,40 @@
                     <td style="background-color: green;"></td>
                     <td style="background-color: green;"></td>
                     <td style="background-color: green;"></td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="12"><img src="circle.PNG" /> </td>
                 </tr>
                 <tr>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="30"><img src="circle.PNG" /> </td>
+                    <td id="29"><img src="circle.PNG" /> </td>
+                    <td id="28"><img src="circle.PNG" /> </td>
+                    <td id="27"><img src="circle.PNG" /> </td>
+                    <td id="26"><img src="circle.PNG" /> </td>
                     <td style="background-color: yellow;"></td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="Start.png" /> </td>
+                    <td id="13"><img src="circle.PNG" /> </td>
+                    <td id="14"><img src="circle.PNG" /> </td>
+                    <td id="15"><img src="circle.PNG" /> </td>
+                    <td id="16"><img src="circle.PNG" /> </td>
+                    <td id="17"><img src="Start.png" /> </td>
                 </tr>
                 <tr>
                     <td colspan="4" rowspan="2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td><img src="circle.PNG" /> </td>
                     <td style="background-color: yellow;"></td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="18"><img src="circle.PNG" /> </td>
                     <td colspan="4" rowspan="2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 </tr>
                 <tr>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="25"><img src="circle.PNG" /> </td>
                     <td style="background-color: yellow;"></td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td  id="19"><img src="circle.PNG" /> </td>
                 </tr>
                 <tr>
                     <td style="background-color: yellow;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td style="background-color: yellow;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td colspan="2" rowspan="2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="24"><img src="circle.PNG" /> </td>
                     <td style="background-color: yellow;"> </td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="20"><img src="circle.PNG" /> </td>
                     <td colspan="2" rowspan="2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td style="background-color: green;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td style="background-color: green;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -103,13 +123,16 @@
                 <tr>
                     <td style="background-color: yellow;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td style="background-color: yellow;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td><img src="Start.png" /> </td>
-                    <td><img src="circle.PNG" /> </td>
-                    <td><img src="circle.PNG" /> </td>
+                    <td id="23"><img src="Start.png" /> </td>
+                    <td id="21"><img src="circle.PNG" /> </td>
+                    <td id="22"><img src="circle.PNG" /> </td>
                     <td style="background-color: green;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td style="background-color: green;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 </tr>
             </tbody>
         </table>
+        </div>
+
     </body>
+    <script src="hw5.js"></script>
 </html>
