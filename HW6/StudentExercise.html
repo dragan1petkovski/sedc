@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+
+        <div class="container border bg-secondary p-2">
+            <div class="row">
+                    <h1>TestForm</h1>
+                </div>                 
+        </div>
+        <div class="container border p-2">
+            <form id="testform">
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" id="name" class="form-control">
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="Password" id="Password" class="form-control">
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <label>Gender</label>
+                    </div>
+                    <div class="col-8">
+                        <field>
+                            <input type="checkbox" id="Male" ><label for="Male" class="me-3">Male</label>
+                            <input type="checkbox" id="Female" ><label for="Female">Female</label>
+                        </field>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <label for="Continent">Continent</label>
+                    </div>
+                    <div class="col-8">
+                        <select size="1" class="form-control">
+                            <option value="Europe">Europe</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Asia">Asia</option>
+                            <option value="NorthAmerica">North America</option>
+                            <option value="SouthAmerica">South America</option>
+                            <option value="Antartica">Antartica</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <label>Meals</label>
+                    </div>
+                    <div class="col-8">
+                        <div class="row">
+                            <fieldset>
+                                <input type="checkbox" id="breakfast" class="me-2"><label for="breakfast">breakfast</label>
+                            </fieldset>
+                        </div>
+                        <div class="row">
+                            <fieldset>
+                                <input type="checkbox" id="lunch" class="me-2"><label for="lunch">lunch</label>
+                            </fieldset>
+                        </div>
+                        <div class="row">
+                            <fieldset>
+                                <input type="checkbox" id="dinner" class="me-2"><label for="dinner">breakfast</label>
+                            </fieldset>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <label for="Remark">Remark</label>
+                    </div>
+                    <div class="col-8">
+                        <textarea form="testform" id="Remark" class="form-control" placeholder="something"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="container border p-2 bg-secondary">
+            <div class="row justify-content-end">
+                <div class="col-1">
+                    <input type="submit" form="testform" value="Send" class="form-control">
+                    
+                </div>
+        
+                <div class="col-1">
+                    <button class="form-control" id="reset">Cancel</button> 
+                </div>
+                 
+            </div>
+        </div>
+    </body>
+</html>
