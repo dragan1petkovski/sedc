@@ -1,0 +1,48 @@
+div.container {
+    margin: 0%;
+    border: 5px;
+    border-style: solid;
+    border-color: black;
+    display: grid;
+    grid-template-rows: 8fr 2fr;
+    height: 600px;
+    width: 600px;
+
+    
+}
+
+div.wraper {
+    border-bottom: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+
+}
+
+div.workarea {
+    border-left: 10px;
+    border-left-style: solid;
+    border-left-color: black;
+    background-color: red;
+
+}
+
+div.navmanu {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+div.navitem {
+    background-color: wheat;
+}
+
+div.footer {
+    display: grid;
+    grid-template-columns: 2fr 7.8fr 0.2fr;
+}
+
+div.rowfooter {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}

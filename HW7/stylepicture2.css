@@ -1,0 +1,172 @@
+div.container {
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(10,1fr);
+    height: 600px;
+    width: 600px;
+
+}
+
+div.item {
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+}
+
+div.item1 {
+    grid-area: 1 / 1 / 1 / 4;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: aqua;
+}
+
+div.item2 {
+    grid-area: 1 / 4 / 1 / 7;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: wheat;
+}
+
+div.item3 {
+    grid-area: 1 / 7 / 1 / 10;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: orange;
+}
+
+div.item4{
+    grid-area: 1 / 10 / 8 / 11;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: wheat;
+}
+
+div.item5{
+    grid-area: 2 / 1 / 4 / 2;
+    border-color: black;
+    border-style: solid;
+    background-color: wheat;
+}
+
+div.item6{
+    grid-area: 2 / 2 / 7 / 7;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: red;
+}
+
+div.item7 {
+    grid-area: 2 / 7 / 5 / 10;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: orange;
+}
+
+div.item8 {
+    grid-area: 4 / 1 / 8 / 2;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: aqua;
+}
+
+div.item9 {
+    grid-area: 5 / 7 / 7 / 9;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: gainsboro;
+}
+
+div.item10 {
+    grid-area: 5 / 9 / 7 / 10;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: wheat;
+}
+
+div.item11 {
+    grid-area: 8 / 1 / 11 / 2;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: orange;
+}
+
+div.item12 {
+    grid-area: 7 / 2 / 9 / 5;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: black;
+}
+div.item13 {
+    grid-area: 7 / 5 / 8 / 7;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: gainsboro;
+}
+
+div.item14 {
+    grid-area: 8 / 5 / 9 / 7;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: wheat;
+}
+
+div.item15 {
+    grid-area: 7 / 7 / 8 / 10;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: aqua;
+}
+
+div.item16{
+    grid-area: 8 / 7 / 10 / 10;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: indigo;
+}
+
+div.item17{
+    grid-area: 8 / 10 / 11 / 11;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: red;
+}
+
+div.item18 {
+    grid-area: 9 / 2 / 11 / 5;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: gainsboro;
+}
+
+div.item19 {
+    grid-area: 9 / 5 / 10 / 7;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: black;
+}
+
+div.item20{
+    grid-area: 10 / 5 / 11 / 10;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: gainsboro;
+}
