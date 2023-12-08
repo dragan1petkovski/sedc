@@ -49,6 +49,8 @@ body {
 
 .mb-1{margin-bottom: 1%;}
 .mb-2{margin-bottom: 2%}
+.ml-1{margin-left: 1%}
+.ml-2{margin-left: 2%}
 
 .align-end {
   justify-content: end;
@@ -62,6 +64,6 @@ body {
   text-align: center;
 }
 
-.button {
-  vertical-align: middle;
+.w-100 {
+  width: 100%;
 }
