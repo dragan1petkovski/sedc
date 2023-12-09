@@ -191,23 +191,39 @@ function deletewarningmessages()
     }
 }
 
+function getpoints(points)
+{
+    let flag = points.match("^[0-9]+/[0-9]+");
+    console.log(flag)
+    if(flag === null)
+    {
+        return null;
+    }
+    else 
+    {
+        
+        let temp = points.split("/");
+        if (isnumber(temp[0]) && isnumber(temp[1]))
+        {
+            return (temp[0]/temp[1])*100;
+        }
+        else
+        {
+            return null;
+        }
+
+    }
+}
+
 function gradeclases()
 {
     deletewarningmessages();
-    const grademap = new Map();
-    grademap.set("90","A");
-    grademap.set("80","B");
-    grademap.set("70","C");
-    grademap.set("60","D");
-    grademap.set("40","E");
-    grademap.set("0","F");
     let subjectpoints = document.getElementsByClassName("classes");
     for(let i =0; i < subjectpoints.length; i++)
     {
-        if (isnumber(subjectpoints[i].value))
+        if (getpoints(subjectpoints[i].value))
         {
-            let points = Number(subjectpoints[i].value);
-            console.log(points)
+            let points = getpoints(subjectpoints[i].value);
             if (points >= 0 && points < 100)
             {
                 let grade = document.getElementById(subjectpoints[i].id+"Grade")
