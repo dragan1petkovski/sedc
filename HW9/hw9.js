@@ -205,7 +205,14 @@ function getpoints(points)
         let temp = points.split("/");
         if (isnumber(temp[0]) && isnumber(temp[1]))
         {
-            return (temp[0]/temp[1])*100;
+            if ((temp[0]/temp[1])<1)
+            {
+                return (temp[0]/temp[1])*100;
+            }
+            else
+            {
+                return null;
+            }
         }
         else
         {
