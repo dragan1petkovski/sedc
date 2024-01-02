@@ -156,3 +156,63 @@ function findminandmax()
     document.getElementById("sumofminandmax_print").innerText = String(minimum+maximum);
 }
 //------------------ End Homework 5 - sum of minimum and maximum  ------------------
+
+//------------------ Start Homework 6 - Add Students ------------------
+let studentnamelist = [];
+let studentsurnamelist = [];
+
+function regexcheck(testnumber,regexpattern)
+{
+    let match = testnumber.match(regexpattern);
+    try
+    {
+        if(match[0] === testnumber)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    catch
+    {
+        return false;
+    }
+
+}
+
+document.getElementById("addstudent").addEventListener("click",addstudent);
+document.getElementById("showstudents").addEventListener("click",showstudents);
+
+function addstudent()
+{
+    let studentname = document.getElementById("studentname");
+    let studentsurname = document.getElementById("studentsurname");
+
+    if(regexcheck(studentname.value,"^-[A-Z]+|[A-Z]+|^-[a-z]+|[a-z]+") && regexcheck(studentsurname.value,"^-[A-Z]+|[A-Z]+|^-[a-z]+|[a-z]+"))
+    {
+        studentnamelist.push(studentname.value)
+        studentsurnamelist.push(studentsurname.value)
+
+    }
+    else{
+        confirm("The Name or surname is not fully alphabetic string")
+    }
+    
+    studentname.value = '';
+    studentsurname.value = '';
+}
+
+function showstudents()
+{
+    let output = [];
+    for(let i = 0; i<studentnamelist.length; i++)
+    {
+        output.push(`${i+1}. ${studentnamelist[i]} ${studentsurnamelist[i]}`)
+    }
+    
+    console.log(output.join(" "))
+}
+
+//------------------ End Homework 6 - Add students  ------------------
