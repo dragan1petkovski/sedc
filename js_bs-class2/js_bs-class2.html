@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="hw9.css" rel="stylesheet" />
+        
+    </head>
+    <body>
+        <div class="row">
+            <div class="row announcement">
+                HW9 - Find your Chinese zodiac
+            </div>
+    
+            <div class="row mb-1">
+                <div class="col-4 align-end">
+                    Year of birth
+                </div>
+                <div class="col-8 pl-1">
+                    <input type="number" id="yearofbirth">
+                </div>
+            </div>
+    
+            <div class="row mb-2">
+                <div class="col-4 align-end">
+                    <input type="button" value="Calculate chinese zodiac" id="calculatechinesezodiac" />
+                </div>
+            </div>
+    
+            <div class="row announcement" id="announcementofchinesezodiac">
+    
+            </div>
+    
+        </div>
+
+        <div class="row">
+            <div class="announcement row">
+                Exercise 1
+            </div>
+            <div class="row">
+                <div class="col-4 align-end">
+                    Can i ask you something?
+                </div>
+                <div class="col-4 pl-1">
+                    <input type="button" value="Yes" id="Answer" />
+                </div>
+    
+            </div>
+            <div class="row announcement" id="Exerciseresult">
+    
+            </div>
+    
+        </div>
+
+        <div class="row">
+            <div class="row header">
+                Additional Homework
+            </div>
+            <div class="row mb-1">
+                <div class="col-4 align-end">
+                    first
+                </div>
+                <div class="col-2 pl-1">
+                    <input type="number" class="numbers w-100" id="1">
+                </div>
+                <div class="col-2 ml-2">
+                    <input type="button" value="type of number" id="button1"/>
+                </div>
+                <div class="col-2 ml-2" id="numbertype1"></div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-4 align-end">
+                    second
+                </div>
+                <div class="col-2 pl-1">
+                    <input type="number" class="numbers w-100" id="2">
+                </div>
+                <div class="col-2 ml-2">
+                    <input type="button" value="type of number" id="button2"/>
+                </div>
+                <div class="col-2 ml-2" id="numbertype2"></div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-4 align-end">
+                    third
+                </div>
+                <div class="col-2 pl-1 ">
+                    <input type="number" class="numbers w-100" id="3">
+                </div>
+                <div class="col-2  ml-2">
+                    <input type="button" value="type of number" id="button3"/>
+                </div>
+                <div class="col-2 ml-2" id="numbertype3"></div>
+            </div>
+    
+            <div class="row mb-2">
+                <div class="col-4 align-end">
+                    Which is biggest number among the numbers?
+                </div>
+                <div class="col-2 pl-1 ">
+                    <input type="button" value="calculate" id="findbiggernumber" />
+                </div>
+                <div class="col-4 pl-1" id="biggernumberis">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row mb-2">
+                <div class="col-4 align-end">
+                    Determine the weekday
+                </div>
+                <div class="col-2 pl-1 ">
+                    <input type="number" class="w-100" id="weekday">
+                </div>
+                <div class="col-2  ml-2">
+                    <input type="button" value="Determine weekday" id="determineweekday"/>
+                </div>
+            </div>    
+        </div>
+
+        <div class="row">
+            <div class="row announcement mb-1">
+                Grade student
+            </div>
+            <div class="row mb-1" style="text-align: center;">
+                Enter points for grading in form of achived_points/total_points for example 30/40
+            </div>
+            <div class="row mb-1">
+                <div class="col-4 align-end">
+                    Physics
+                </div>
+                <div class="col-2 pl-1">
+                    <input type="text" class="classes w-100" id="Physics">
+                </div>
+                <div class="col-4 pl-1 alert" id="PhysicsGrade"> </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-4 align-end">
+                    Chemistry
+                </div>
+                <div class="col-2 pl-1">
+                    <input type="text" class="classes w-100" id="Chemistry">
+                </div>
+                <div class="col-4 pl-1 alert" id="ChemistryGrade"> </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-4 align-end">
+                    Biology
+                </div>
+                <div class="col-2 pl-1">
+                    <input type="text" class="classes w-100" id="Biology">
+                </div>
+                <div class="col-4 pl-1 alert" id="BiologyGrade"> </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-4 align-end">
+                    Mathematics
+                </div>
+                <div class="col-2 pl-1">
+                    <input type="text" class="classes w-100" id="Mathematics">
+                </div>
+                <div class="col-4 pl-1 alert" id="MathematicsGrade"> </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-4 align-end">
+                    Computer
+                </div>
+                <div class="col-2 pl-1">
+                    <input type="text" class="classes w-100" id="Computer">
+                </div>
+                <div class="col-4 pl-1 alert" id="ComputerGrade"> </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-4 align-end">&nbsp;</div>
+                <div class="col-2 pl-1">
+                    <input type="button" class="w-100" value="Grade Student" id="Grading">
+                </div>
+                
+            </div>
+        </div>
+    </body>
+    <script src="hw9.js"></script>
+</html>
