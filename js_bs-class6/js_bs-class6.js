@@ -26,20 +26,19 @@ function createcolumns(numberofcolumns,tag,cellsize)
     let column='';
     for (let i=0;i<numberofcolumns; i++)
     {
-        column = column + `<${tag} style="border: 1px; border-style: solid; border-color: black; width:${cellsize}px; height:${cellsize}px"></${tag}>`
+        column = column + `<${tag} style="width:${cellsize}px; height:${cellsize}px"></${tag}>`
     }
     return column;
 }
 
 function createtableelement(numberofcolumns,numberofrows,cellsize)
 {
-    let table = '<table style="border: 1px; border-style: solid; border-color: black">';
-    table= table+ '<thead style="border: 1px; border-style: solid; border-color: black">'+createcolumns(numberofcolumns,"th",cellsize)+"</thead>"
+    let table = '<table>';
+    table= table+ '<thead>'+createcolumns(numberofcolumns,"th",cellsize)+"</thead>"
     table = table+"<tbody>"
     for(let i=1; i<numberofrows ; i++)
     {
-        console.log(i)
-        table = table+ '<tr style="border: 1px; border-style: solid; border-color: black">'+createcolumns(numberofcolumns,"td",cellsize)+"</tr>"
+        table = table+ '<tr>'+createcolumns(numberofcolumns,"td",cellsize)+"</tr>"
         
     }
     table = table+"</tbody>"

@@ -1,5 +1,7 @@
 body {
     margin: 0%;
+    background-color: white;
+    padding: 3em;
 }
 
 * {
@@ -71,4 +73,13 @@ body {
 .inputstyle {
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+
+table, th, td {
+  border: 1px;
+  border-color: black;
+  border-collapse:collapse;
+  border-style: solid;
+  padding: 5px;
 }
