@@ -164,8 +164,6 @@ function listallbooks(status)
     }
 
     visiblebuttons()
-    // let markasread = document.getElementById("markasread")
-    // markasread.removeAttribute("hidden")
     let showbooks = document.getElementById("showbooks")
     showbooks.innerHTML = '';
     showbooks.appendChild(table)
