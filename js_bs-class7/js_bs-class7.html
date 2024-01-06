@@ -4,7 +4,83 @@
         <link href="js_bs-class7.css" rel="stylesheet">
     </head>
     <body>
+        <div class="row announcment">
+            <p>Homework 1 - animal :)</p>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col-2">
+                    <p style="text-align: end;">Enter the type of animal</p>
+                </div>
+                <div class="col-2 pl-2">
+                    <input type="text" class="inputstyle" id="animalkind"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <p style="text-align: end;">message</p>
+                </div>
+                <div class="col-4 pl-2">
+                    <input type="text" class="inputstyle w-100" id="animalspeak-text"/>
+                </div>
+                <div class="col-2 pl-2">
+                    <input type="button" class="inputstyle" value="Speak" id="animalspeak-input"/>
+                </div>
+            </div>
+            <div class="row" style="text-align: center;" id="animalspeak-output">
+            </div>
+        </div>
 
+        <div class="row announcment">
+            <p>Homework 2 - Reading books</p>
+        </div>
+        <div class="row">
+            <div class="row">
+                <p style="text-align: center;">Add for book for reading</p>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <p style="text-align: center;">Enter the name of the book</p>
+                </div>
+                <div class="col-8">
+                    <input type="text" class="w-100 inputstyle" id="nameofthebook" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <p style="text-align: center;">Enter the author of the book</p>
+                </div>
+                <div class="col-8">
+                    <input type="text" class="w-100 inputstyle" id="authorofthebook"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <input type="button" class="inputstyle" value="Add new Book" style="float:right" id="addnewbook">
+                </div>
+                <div class="col-1">
+                    <input type="button" class="inputstyle" value="list all books" style="float:right" id="listallbooks">
+                </div>
+                <div class="col-1">
+                    <input type="button" class="inputstyle" value="list read books only" style="float:right" id="listreadbooks">
+                </div>
+                <div class="col-1">
+                    <input type="button" class="inputstyle" value="list unread book only" style="float:right" id="listunreadbooks">
+                </div>
+                <div class="col-1">
+                    <input type="button" class="inputstyle" value="Delete All Books" style="float:right; background-color: red" id="deleteallbooks">
+                </div>
+            </div>
+            <div class="row" style="display: flex; justify-content: center">
+                <input type=button value="Change book status" id="changebookstatus" class="buttonsformarking" hidden style="margin-bottom: 10px;"/>
+            </div>
+            <div class="row"style="display: flex; justify-content: center" id="showbooks">
+        
+            </div>
+
+        </div>
+        
     </body>
     <script src="js_bs-class7.js"></script>
+    <script src="js_bs-class7-2.js"></script>
 </html>
