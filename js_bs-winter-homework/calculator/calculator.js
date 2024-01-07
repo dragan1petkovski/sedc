@@ -308,12 +308,11 @@ function equal()
     if(calculationoutput.error === '')
     {
         localStorage.setItem("lastnumber",calculationoutput.output)
-        localStorage.setItem("lastnumber",result)
         localStorage.setItem("lastoperator","=")
         lastnumber=localStorage.getItem("lastnumber")
         tempnumber='';
-        output=result.toString();
-        display(result,lastnumber)
+        output=calculationoutput.output.toString();
+        display(output,lastnumber)
     }
     else
     {
