@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="calculator.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+        <title>Calculator</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4" id="output"></td>
+                </tr>
+                <tr>
+                    <th colspan="4" id="current"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2"><input type="button" value="C" class="w-100 h-100" id="c"></td>
+                    <td><input type="button" value="&#8592;" class="w-100 h-100"  id="backspace"></td>
+                    <td class="operands"><input type="button" value="&#8725;" class="w-100 h-100"  id="division"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="7" class="w-100 h-100" id="7"></td>
+                    <td><input type="button" value="8" class="w-100 h-100" id="8"></td>
+                    <td><input type="button" value="9" class="w-100 h-100" id="9"></td>
+                    <td class="operands"><input type="button" value="&#10799;" class="w-100 h-100" id="multipilcation"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" class="w-100 h-100" id="4"></td>
+                    <td><input type="button" value="5" class="w-100 h-100" id="5"></td>
+                    <td><input type="button" value="6" class="w-100 h-100" id="6"></td>
+                    <td class="operands"><input type="button" value="&minus;" class="w-100 h-100" id="minus"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1" class="w-100 h-100" id="1"></td>
+                    <td><input type="button" value="2" class="w-100 h-100" id="2"></td>
+                    <td><input type="button" value="3" class="w-100 h-100" id="3"></td>
+                    <td class="operands"><input type="button" value="+" class="w-100 h-100" id="+"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="." class="w-100 h-100" id="."></td>
+                    <td colspan="2"><input type="button" value="0" class="w-100 h-100" id="0"></td>
+                    <td class="operands"><input type="button" value="=" class="w-100 h-100" id="="></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    <script src="calculator.js"></script>
+</html>
