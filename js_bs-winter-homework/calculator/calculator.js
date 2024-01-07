@@ -1,4 +1,4 @@
-document.getElementById("c").addEventListener("click",clearall)
+document.getElementById("c").addEventListener("click",function(){clearall()})
 document.getElementById("backspace").addEventListener("click",backspace)
 document.getElementById("division").addEventListener("click",divide)
 document.getElementById("7").addEventListener("click",seven)
@@ -77,44 +77,56 @@ function changeoperator(outputoperator,operator)
 }
 
 
-
 function calculatetwonumbers(number1,number2,operand)
 {
+    let output = {"error":'',"output":0}
     if (operand === '/')
     {
-        return parseFloat(number1) / parseFloat(number2)
+        if(parseFloat(number2)!==0)
+        {
+            output.output= parseFloat(number1) / parseFloat(number2)
+        }
+        else
+        {
+            output.error="Infinity: Division with ZERO is forbiden"
+            
+        }
+        return output
+       
     }
     else if(operand === "*")
     {
-        return parseFloat(number1) * parseFloat(number2)
+        output.output = parseFloat(number1) * parseFloat(number2)
+        return output
     }
     else if(operand === "+")
     {
-        return parseFloat(number1) + parseFloat(number2)
+        output.output =  parseFloat(number1) + parseFloat(number2)
+        return output
     }
     else if(operand === "-")
     {
-        return parseFloat(number1) - parseFloat(number2)
+        output.output =  parseFloat(number1) - parseFloat(number2)
+        return output
     }
     else if(operand === "=")
     {
-        return parseFloat(number1)
+        output.output =  parseFloat(number1)
+        return output
     }
 }
 
 //----------------------- clear ----------------------
-function clearall()
+function clearall(error = '')
 {
     localStorage.setItem("lastnumber",0)
     localStorage.removeItem("lastoperator")
     tempnumber =''
     output = '';
-    current ='';
-    display('','')
+    display('',error)
 }
 function backspace()
 {
-    current = '';
     if (output.slice(-1) == ";" )
     {
         
@@ -127,7 +139,7 @@ function backspace()
         output = output.slice(0,-1)
     }
     document.getElementById("output").innerHTML = output;
-    // document.getElementById("current").innerHTML = current;
+
 }
 
 //----------------------- operands ----------------------
@@ -142,7 +154,16 @@ function divide()
     let lastoperator = localStorage.getItem("lastoperator")
     if (lastoperator != null)
     {
-        localStorage.setItem("lastnumber",calculatetwonumbers(lastnumber,parseFloat(tempnumber),lastoperator))
+        let calculationoutput = calculatetwonumbers(lastnumber,parseFloat(tempnumber),lastoperator)
+        if(calculationoutput.error === '')
+        {
+            localStorage.setItem("lastnumber",calculationoutput.output)
+        }
+        else
+        {
+            clearall(calculationoutput.error)
+        }
+
     }
     else if(lastoperator == null)
     {
@@ -166,7 +187,15 @@ function multiplication()
     let lastoperator = localStorage.getItem("lastoperator")
     if (lastoperator != null)
     {
-        localStorage.setItem("lastnumber",calculatetwonumbers(lastnumber,parseFloat(tempnumber),lastoperator))
+        let calculationoutput = calculatetwonumbers(lastnumber,parseFloat(tempnumber),lastoperator)
+        if(calculationoutput.error === '')
+        {
+            localStorage.setItem("lastnumber",calculationoutput.output)
+        }
+        else
+        {
+            clearall(calculationoutput.error)
+        }
     }
     else if(lastoperator == null)
     {
@@ -198,7 +227,15 @@ function addition()
 
     if (lastoperator != null)
     {
-        localStorage.setItem("lastnumber",calculatetwonumbers(lastnumber,parseFloat(tempnumber),lastoperator))
+        let calculationoutput = calculatetwonumbers(lastnumber,parseFloat(tempnumber),lastoperator)
+        if(calculationoutput.error === '')
+        {
+            localStorage.setItem("lastnumber",calculationoutput.output)
+        }
+        else
+        {
+            clearall(calculationoutput.error)
+        }
     }
     else if(lastoperator == null)
     {
@@ -229,7 +266,15 @@ function subtraction()
     let lastoperator = localStorage.getItem("lastoperator")
     if (lastoperator != null)
     {
-        localStorage.setItem("lastnumber",calculatetwonumbers(lastnumber,parseFloat(tempnumber),lastoperator))
+        let calculationoutput = calculatetwonumbers(lastnumber,parseFloat(tempnumber),lastoperator)
+        if(calculationoutput.error === '')
+        {
+            localStorage.setItem("lastnumber",calculationoutput.output)
+        }
+        else
+        {
+            clearall(calculationoutput.error)
+        }
     }
     else if(lastoperator == null)
     {
@@ -259,13 +304,23 @@ function equal()
     {
         return;
     }
-    let result=calculatetwonumbers(lastnumber,tempnumber,lastoperator)
-    localStorage.setItem("lastnumber",result)
-    localStorage.setItem("lastoperator","=")
-    lastnumber=localStorage.getItem("lastnumber")
-    tempnumber='';
-    output=result.toString();
-    display(result,lastnumber)
+    let calculationoutput = calculatetwonumbers(lastnumber,tempnumber,lastoperator)
+    if(calculationoutput.error === '')
+    {
+        localStorage.setItem("lastnumber",calculationoutput.output)
+        localStorage.setItem("lastnumber",result)
+        localStorage.setItem("lastoperator","=")
+        lastnumber=localStorage.getItem("lastnumber")
+        tempnumber='';
+        output=result.toString();
+        display(result,lastnumber)
+    }
+    else
+    {
+        clearall(calculationoutput.error)
+        tempnumber='';
+    }
+
 
 }
 
