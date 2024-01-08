@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="hangman.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+        <title>Hangmane</title>
+    </head>
+    <body>
+        <div class="row announcment">
+            <p>Enter the Hangman - poweredby Metallica</p>
+        </div>
+        <div class="row p-2" style="display:flex; justify-content: center">
+            <input type="button" value="A" id="a" class="letterbutton"/>
+            <input type="button" value="B" id="b" class="letterbutton"/>
+            <input type="button" value="C" id="c" class="letterbutton"/>
+            <input type="button" value="D" id="d" class="letterbutton"/>
+            <input type="button" value="E" id="e" class="letterbutton"/>
+            <input type="button" value="F" id="f" class="letterbutton"/>
+            <input type="button" value="G" id="g" class="letterbutton"/>
+            <input type="button" value="H" id="h" class="letterbutton"/>
+            <input type="button" value="I" id="i" class="letterbutton"/>
+            <input type="button" value="J" id="j" class="letterbutton"/>
+            <input type="button" value="K" id="k" class="letterbutton"/>
+            <input type="button" value="L" id="l" class="letterbutton"/>
+            <input type="button" value="M" id="m" class="letterbutton"/>
+            <input type="button" value="N" id="n" class="letterbutton"/>
+            <input type="button" value="O" id="o" class="letterbutton"/>
+            <input type="button" value="P" id="p" class="letterbutton"/>
+            <input type="button" value="Q" id="q" class="letterbutton"/>
+            <input type="button" value="R" id="r" class="letterbutton"/>
+            <input type="button" value="S" id="s" class="letterbutton"/>
+            <input type="button" value="T" id="t" class="letterbutton"/>
+            <input type="button" value="U" id="u" class="letterbutton"/>
+            <input type="button" value="V" id="v" class="letterbutton"/>
+            <input type="button" value="W" id="w" class="letterbutton"/>
+            <input type="button" value="X" id="x" class="letterbutton"/>
+            <input type="button" value="Y" id="y" class="letterbutton"/>
+            <input type="button" value="Z" id="z" class="letterbutton"/>
+        </div>
+
+        <div class="row" id="informative row" style="height:100px" >
+            <div class="col-2">
+                <div class="row">
+                    <input type="button" value="Start new game" id="startnewgame" style="float: right" class="inputstyle"/>
+                </div>
+                <div class="row">
+                    <input type="button" value="Hint" id="hintbutton" style="float: right" class="inputstyle">
+                </div>
+                
+            </div>
+
+            <div class="col-3 ml-2">
+                <div class="row" id="topic">
+                </div>
+                <div class="row" id="hint">
+                </div>
+                <div class="row" id="informationmessages">
+                </div>
+            </div>
+
+            <div class="col-6" id="notificationmessage" style="display: flex; justify-content: center;">
+            </div>
+
+        </div>
+    
+    
+        <div class="row" id="theword" style="text-align: center">
+        </div>
+
+        <div class="row" id="hangmanimage" style="display: flex; justify-content: center;">
+            <img src="images/0.PNG" id="hangman_image"> 
+        </div>
+        
+    </body>
+    <script src="hangman_data.js"></script>
+    <script src="hangman_alphabet.js"></script>
+    <script src="hangman.js"></script>
+    
+</html>
