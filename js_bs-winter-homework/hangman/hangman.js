@@ -82,9 +82,10 @@ function checkforwin()
 {
     let word = localStorage.getItem("playword")
     let displayword = localStorage.getItem("displayword")
+    let wordwearelookingfor = JSON.parse(localStorage.getItem("currentword"))
     if(word.replaceAll(" ",'') == displayword.replaceAll(" ",''))
     {
-        confirm("Congratulations you win!!!!")
+        confirm(`Congratulations you win!!!!\n The word we are looking for is "${wordwearelookingfor.word}"`)
         startnewgame()
     }
 }
@@ -92,9 +93,10 @@ function checkforwin()
 function checkforloss()
 {
     let wrongletter = localStorage.getItem("wrongletter")
+    let wordwearelookingfor = JSON.parse(localStorage.getItem("currentword"))
     if (parseInt(wrongletter) === 6)
     {
-        confirm("You have been hanged!!!!")
+        confirm(`You have been hanged!!!!\n The word we are looking for is "${wordwearelookingfor.word}"`)
         startnewgame()
     }
 }
@@ -109,7 +111,6 @@ function displaytheword()
     {
         for(let i=0; i<position.length; i++)
         {
-            console.log(position[i])
             displayword = displayword.slice(0,position[i]-1)+letter +displayword.slice(position[i])
             // displayword = changeletter(displayword,position[i],letter)
             
