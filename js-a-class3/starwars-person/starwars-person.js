@@ -117,6 +117,10 @@ let swtable = (swobject) =>
 
 
 let getswcharacter = (swlink)=>{
+    if(swlink === '')
+    {
+        swlink = "https://swapi.dev/api/people/1"
+    }
     try
     {
         fetch(checkinputswlink(swlink)).then((response)=>{
