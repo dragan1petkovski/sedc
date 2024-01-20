@@ -55,7 +55,6 @@ let addreminder = () => {
         writetostorage(reminder)
 
     }
-    console.log("tuka sum")
     title.value = ''
     priority.value = ''
     description.value = ''
