@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie renting</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> 
+    </head>
+    <body class="p-3">
+        <div class="row text-center h1">
+            <h1>Movie Renting</h1>
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <label for="searchtype" style="margin-right: 10%">Search movie by</label>
+                <select id="searchtype" class="btn btn-outline-secondary">
+                    <option value="genre">Movie genre</option>
+                    <option value="name">Movie name</option>
+                    <option value="producer">Producer</option>
+                    <option value="director">Director</option>
+
+                </select>
+            </div>
+            <div class="col-6">
+                <input  class="form-control" type="text" class="w-100" id="searchparameter">
+            </div>
+            <div class="col-1">
+                <input class="form-control" type="button" value="&#x1F50E;" id="searchbutton" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal">Add new movie</button>
+            </div>
+        </div>
+        <div class="row" id="output">
+
+        </div>
+    </body>
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Add new movie</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row mb-1">
+                    <div class="col-4">Enter the Name</div>
+                    <div class="col-8">
+                        <input type="text" class="w-100" id="name">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-4">Enter the Genre</div>
+                    <div class="col-8">
+                        <input type="text" class="w-100" id="genre">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-4">Enter the Producer</div>
+                    <div class="col-8">
+                        <input type="text" class="w-100" id="producer">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-4">Enter the Director</div>
+                    <div class="col-8">
+                        <input type="text" class="w-100" id="director">
+                    </div>
+                </div>
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <input type="button" class="btn btn-success" value="Add movie" id="addnewmovie" data-bs-dismiss="modal">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      <script src="movie-renting.js"></script>
+</html>
