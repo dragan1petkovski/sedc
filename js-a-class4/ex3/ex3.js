@@ -40,7 +40,7 @@ let createtable = (arrayofnumbers) => {
         let bodyrow = body.insertRow(i)
         bodyrow.style.border = "1px solid black"
         bodyrow.insertCell(0).innerText = arrayofnumbers[i]
-        bodyrow.insertCell(1).innerText = square(arrayofnumbers[i])
+        bodyrow.insertCell(1).innerText = square(arrayofnumbers[i]) //this can be written as bodyrow.insertCell(1).innerText = ((number)=>number*number)(arrayofnumbers[i])
     }
 
     let output = document.getElementById("output")
