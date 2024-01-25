@@ -1,46 +1,66 @@
-let showLoader = () =>
+
+let startLogoLoader = () =>
 {
-  let loader = document.createElement("div")
-  loader.className = "loader"
-  document.getElementById("output").innerHTML = ''
-  document.getElementById("output").append(loader)
+  console.log("start loader")
+  let image = document.getElementById("rotatinglogo")
+  image.className = "rotate"
 }
 
+let stopLogoLoader = () =>
+{
+  console.log("stop loader")
+  let image = document.getElementById("rotatinglogo")
+  image.removeAttribute("class")
+}
 
-let nextpage = ()=>
+let nextpage = async ()=>
 {
   let nextpage = localStorage.getItem("nextpage")
   if(nextpage.match("^https://swapi.dev/api/people/") != null)
   {
-    showLoader()
-    createTablepeople(nextpage)
+    startLogoLoader()
+    await createTablepeople(nextpage)
+    stopLogoLoader()
   }
   else
   {
-    showLoader()
-    createTableships(nextpage)
+    startLogoLoader()
+    await createTableships(nextpage)
+    stopLogoLoader()
   }
   
 }
 
-let previouspage = () =>
+let previouspage =async  () =>
 {
   let previouspage = localStorage.getItem("previouspage")
   if(previouspage.match("^https://swapi.dev/api/people/") != null)
   {
-    showLoader()
-    createTablepeople(previouspage)
+
+    startLogoLoader()
+    await createTablepeople(previouspage)
+    stopLogoLoader()
   }
   else
   {
-    showLoader()
-    createTableships(previouspage)
+
+    startLogoLoader()
+    await createTableships(previouspage)
+    stopLogoLoader()
   }
   
 }
 
 
-document.getElementById("nextpage").addEventListener("click",()=>{nextpage()})
-document.getElementById("previouspage").addEventListener("click",()=>{previouspage()})
+document.getElementById("nextpage").addEventListener("click",async()=>{
+  startLogoLoader()
+  await nextpage()
+  stopLogoLoader()
+})
+document.getElementById("previouspage").addEventListener("click",async()=>{
+  startLogoLoader()
+  await previouspage()
+  stopLogoLoader()
+})
   //https://swapi.dev/api/vehicles
   //https://swapi.dev/api/people

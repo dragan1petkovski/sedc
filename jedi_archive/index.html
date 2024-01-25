@@ -1,0 +1,26 @@
+<!DOCTYPe html>
+<html>
+    <head>
+        <link href="jedi.css" rel="stylesheet">
+    </head>
+    <body style="overflow: hidden" >
+        <img src="death star2.png" usemap="#starwars">
+        <map name="starwars">
+            <area shape="rect" coords="246,113,530,718" id="ship">
+            <area shape="rect" coords="1165,394,1409,617" id="people">
+            <area shape="rect" coords="1289,625,1356,695" id="nextpage">
+            <area shape="rect" coords="1209,625,1279,695" id="previouspage">
+
+        </map>
+        <div  style="position: absolute; top: 20px; right:20px" id="home" >
+            <img src="Jedi_Order-log.png"  id="rotatinglogo">
+        </div>
+        
+        <div class="row" id="output" style="color: white; position:absolute; bottom: 0; left:0;">
+        
+        </div>
+    </body>
+    <script src="people-jedi.js"></script>
+    <script src="ships-jedi.js"></script>
+    <script src="next-previous.js"></script>
+</html>
