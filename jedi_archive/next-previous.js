@@ -1,14 +1,16 @@
+import {createTablepeople} from "./people-jedi.js"
+import {createTablePlanets} from "./planets.js"
+import { createTableships } from "./ships-jedi.js"
+import { pagination } from "./utilities.js"
 
-let startLogoLoader = () =>
+export let startLogoLoader = () =>
 {
-  console.log("start loader")
   let image = document.getElementById("rotatinglogo")
   image.className = "rotate"
 }
 
-let stopLogoLoader = () =>
+export let stopLogoLoader = () =>
 {
-  console.log("stop loader")
   let image = document.getElementById("rotatinglogo")
   image.removeAttribute("class")
 }
@@ -19,33 +21,84 @@ let nextpage = async ()=>
   if(nextpage.match("^https://swapi.dev/api/people/") != null)
   {
     startLogoLoader()
+
+    if(localStorage.getItem("previouspage") == undefined)
+    {
+      localStorage.setItem("previouspage",localStorage.getItem("current"))
+    }
+    else
+    {
+      localStorage.setItem("previouspage",`${localStorage.getItem("previouspage")},${localStorage.getItem("current")}`)
+    }
+
     await createTablepeople(nextpage)
+    
+    stopLogoLoader()
+  }
+  else if(nextpage.match("^https://swapi.dev/api/vehicles"))
+  {
+    startLogoLoader()
+    console.log(nextpage)
+    if(localStorage.getItem("previouspage") == undefined)
+    {
+      localStorage.setItem("previouspage",localStorage.getItem("current"))
+    }
+    else
+    {
+      localStorage.setItem("previouspage",`${localStorage.getItem("previouspage")},${localStorage.getItem("current")}`)
+    }
+
+    await createTableships(nextpage)
     stopLogoLoader()
   }
   else
   {
     startLogoLoader()
-    await createTableships(nextpage)
+
+    if(localStorage.getItem("previouspage") == undefined)
+    {
+      localStorage.setItem("previouspage",localStorage.getItem("current"))
+    }
+    else
+    {
+      localStorage.setItem("previouspage",`${localStorage.getItem("previouspage")},${localStorage.getItem("current")}`)
+    }
+
+    await createTablePlanets(nextpage)
     stopLogoLoader()
   }
-  
 }
 
 let previouspage =async  () =>
 {
-  let previouspage = localStorage.getItem("previouspage")
-  if(previouspage.match("^https://swapi.dev/api/people/") != null)
+  let previouspages = localStorage.getItem("previouspage")
+  previouspages = previouspages.split(",")
+  let lastone = previouspages.pop()
+  if(previouspages.length === 0)
+  {
+    localStorage.removeItem("previouspage")
+  }
+  if(lastone.match("^https://swapi.dev/api/people/") != null)
+  {
+    startLogoLoader()
+    localStorage.setItem("previouspage",previouspages.join(","))
+    await createTablepeople(lastone)
+    
+    stopLogoLoader()
+  }
+  else if(lastone.match("^https://swapi.dev/api/vehicles"))
   {
 
     startLogoLoader()
-    await createTablepeople(previouspage)
+    localStorage.setItem("previouspage",previouspages.join(","))
+    await createTableships(lastone)
     stopLogoLoader()
   }
   else
   {
-
     startLogoLoader()
-    await createTableships(previouspage)
+    localStorage.setItem("previouspage",previouspages.join(","))
+    await createTablePlanets(lastone)
     stopLogoLoader()
   }
   

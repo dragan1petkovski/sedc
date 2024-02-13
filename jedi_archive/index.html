@@ -3,7 +3,10 @@
     <head>
         <link href="jedi.css" rel="stylesheet">
     </head>
-    <body style="overflow: hidden" >
+    <body style="overflow: hidden">
+        
+        
+
         <img src="death star2.png" usemap="#starwars">
         <map name="starwars">
             <area shape="rect" coords="246,113,530,718" id="ship">
@@ -12,15 +15,29 @@
             <area shape="rect" coords="1209,625,1279,695" id="previouspage">
 
         </map>
-        <div  style="position: absolute; top: 20px; right:20px" id="home" >
-            <img src="Jedi_Order-log.png"  id="rotatinglogo">
+        <div style="position: absolute; top:0px; left:0px;font-size: 2em;" id="pagination">
+        </div>
+        <div style="position: absolute; top:200px; right:425px">
+            <img src="planets.png" >
+            <div style="position: absolute; top:50%;left: 50%;transform: translate(-50%, -50%);" id="planets">
+                <p style="font-size: 1.2em;">Do you like planets?</p>
+            </div>
+        </div>
+        <div style="position: absolute; top: 20px; right:20px">
+            
+            <img src="Jedi_Order-log.png"  id="rotatinglogo" style="margin-left:100px">
+        </div>
+        
+        <div style="position: absolute; top:350px; right:100px" id="search">
         </div>
         
         <div class="row" id="output" style="color: white; position:absolute; bottom: 0; left:0;">
         
         </div>
     </body>
-    <script src="people-jedi.js"></script>
-    <script src="ships-jedi.js"></script>
-    <script src="next-previous.js"></script>
+    <script type="module" src="utilities.js"></script>
+    <script type="module" src="people-jedi.js"></script>
+    <script type="module" src="ships-jedi.js"></script>
+    <script type="module" src="next-previous.js"></script>
+    <script type="module" src="planets.js"></script>
 </html>

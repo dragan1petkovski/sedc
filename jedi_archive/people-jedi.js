@@ -1,3 +1,21 @@
+import {createHeaderCell, searchTable, generalSortingNumbers, generalSortingStrings,pagination} from "./utilities.js"
+import {startLogoLoader,stopLogoLoader} from "./next-previous.js"
+
+let createSearchFunc = () => {
+
+  let span = document.getElementById("search")
+  span.innerHTML = ''
+  span.innerHTML = ` <img src="anythingspecific.png">
+  <span style="position: absolute; top:50%;left: 50%;transform: translate(-50%, -50%);" >
+    <label for="searchinput">Anything specific?</label>
+    <input type="text" id="searchinput" style="display:inline; background-color:transparent; box-shadow:none; border: 1px sold black">
+    <button class="sortingbutton" id="searchbutton">&#128269;</button>
+  </span>
+`
+  document.getElementById("searchbutton").addEventListener("click",() => {searchTable(document.getElementById("outputtable"),document.getElementById("searchinput"))})
+
+}
+
 let getMovieName = async (swlink) =>
 {
   let link;
@@ -32,15 +50,15 @@ let getMovies = async () =>
   }
 }
 
-let removeMovies = ()=>
-{
-  let movies = localStorage.getItem("movies")
-  for(let movie of movies.split(","))
-  {
-    localStorage.removeItem(movie)
-  }
-  localStorage.getItem("movies")
-}
+// let removeMovies = ()=>
+// {
+//   let movies = localStorage.getItem("movies")
+//   for(let movie of movies.split(","))
+//   {
+//     localStorage.removeItem(movie)
+//   }
+//   localStorage.getItem("movies")
+// }
 
 let addMovieToList = (movie) =>
 {
@@ -81,37 +99,28 @@ let movieKey= (movie) =>
 }
 
 
-
-let createTablepeople = async (swlink) => {
-  let link;
+export let createTablepeople = async (swlink) => {
   let response;
   try{
-     link = await fetch(swlink)
-     response = await link.json()
+     response = await fetch(swlink).then((response) => response.json()).catch((error) => console.error("Server Failed"+error))
 
      localStorage.setItem("nextpage",response.next)
-     if(localStorage.getItem("current") == undefined)
-     {
-       localStorage.setItem("current",swlink)
-     }
-     else
-     {
-       let current = localStorage.getItem("current")
-       localStorage.setItem("previouspage",current)
-       localStorage.setItem("current",swlink)
-     }
+     localStorage.setItem("current",swlink)
      
     let result = response.results
     // Create table
     let table = document.createElement("table")
+    table.setAttribute("id","outputtable")
     let head = table.createTHead();
     let body = table.createTBody();
     let header = head.insertRow(0)
-    header.insertCell(0).innerText = "Name"
-    header.insertCell(1).innerText = "Height"
-    header.insertCell(2).innerText = "Mass"
-    header.insertCell(3).innerText = "Gender"
-    header.insertCell(4).innerText = "Birthyear"
+
+    createHeaderCell(header.insertCell(0),"Name",()=> generalSortingStrings("Name",0) )
+    createHeaderCell(header.insertCell(1),"Height",()=> generalSortingNumbers("Height",1))
+    createHeaderCell(header.insertCell(2),"Mass",()=> generalSortingNumbers("Mass",2))
+    createHeaderCell(header.insertCell(3),"Gender",()=> generalSortingStrings("Gender",3))
+    createHeaderCell(header.insertCell(4),"Birthyear",()=> generalSortingStrings("Birthyear",4))
+
     header.insertCell(5).innerText = "Movies"
     let i
     for(i=0; i< result.length; i++)
@@ -143,6 +152,26 @@ let createTablepeople = async (swlink) => {
     }
      document.getElementById("output").innerHTML = ''
      document.getElementById("output").append(table)
+     createSearchFunc()
+
+     let pagenumber = localStorage.getItem("previouspage")
+     if(pagenumber == undefined)
+     {
+       pagination(Math.ceil(parseInt(response.count)/parseInt(response.results.length)),1)    
+     }
+     else
+     {
+       if(pagenumber === '')
+       {
+         pagination(Math.ceil(parseInt(response.count)/parseInt(response.results.length)),1) 
+       }
+       else if(pagenumber.split(",").length>0)
+       {
+          pagination(Math.ceil(parseInt(response.count)/parseInt(response.results.length)),parseInt(pagenumber.split(",").length)+1) 
+       }
+     }
+     
+
   }
   catch(error){
     stopLogoLoader()
@@ -152,7 +181,15 @@ let createTablepeople = async (swlink) => {
 
 document.getElementById("people").addEventListener("click", async () => {
   startLogoLoader()
+
+  localStorage.removeItem("previouspage")
   await createTablepeople("https://swapi.dev/api/people/")
+
+  if(localStorage.getItem("totalPages") !== undefined)
+  {
+    localStorage.removeItem("totalPages")
+  }
+
   stopLogoLoader()
 })
   
