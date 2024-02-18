@@ -1,0 +1,14 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
+  }
+  .grid-item {
+    padding: 2%;
+  }
+  .grid-randombeercontainer
+  {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+  }
