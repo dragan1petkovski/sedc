@@ -37,6 +37,11 @@ namespace Database
             }
 
         }
+    
+        public static List<Int128> GetAllCardNumbers()
+        {
+            return data.Keys.ToList<Int128>();
+        }
     }
 
 

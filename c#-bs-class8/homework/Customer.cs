@@ -17,5 +17,7 @@ namespace customer
         public override string ToString() => $"{FirstName} {LastName}";
 
         public string Greeting() => $"Welcome to DBank {FirstName} {LastName}";
+
+        public string RegisteringInformation() => $"Your Card Number is {FromCardNumber()}\nYour PIN is {getPIN()}\nYour PIN is confidential DO NOT share it";
     }
 }

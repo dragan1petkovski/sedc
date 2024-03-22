@@ -22,7 +22,7 @@ namespace account
             if(cardnumber.Contains("-"))
             {
                 string[] parts = cardnumber.Split("-");
-                if(parts.Length == 3)
+                if(parts.Length == 4)
                 {
                     for (int i = 0; i < parts.Length; i++)
                     {
@@ -58,6 +58,12 @@ namespace account
             }
         }
         
+        public string FromCardNumber()
+        {
+            string temp = CardNumber.ToString();
+            return $"{temp.Substring(0, 4)}-{temp.Substring(4, 4)}-{temp.Substring(8, 4)}-{temp.Substring(12,4)}";
+        }
+
         private Int128 GenerateCardNumber()
         {
             Int128 output = 0;
@@ -154,5 +160,7 @@ namespace account
         }
 
         public string getBalance() => $"Your Balance have: {Balance}";
+
+        public string getPIN() => PIN;
     }
 }

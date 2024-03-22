@@ -39,9 +39,9 @@ namespace homework
                         CardNumber = Console.ReadLine();
                         Console.WriteLine("Enter PIN");
                         pin = Console.ReadLine();
-
                         if (DataBase.TryGetCustomer(Account.ToCardNumber(CardNumber), out Customer customer))
                         {
+                            
                             if (customer.ValidatePIN(pin))
                             {
                                 Console.WriteLine(customer.Greeting());
@@ -116,6 +116,11 @@ namespace homework
                                     string pin = Account.CreateNewPIN();
                                     Customer newCustomer = new Customer(customerFistName, customerLastName, pin);
                                     DataBase.AddCustomer(newCustomer.CardNumber, newCustomer);
+                                    foreach(Int128 t in DataBase.GetAllCardNumbers())
+                                    {
+                                        Console.WriteLine(t);
+                                    }
+                                    Console.WriteLine(newCustomer.RegisteringInformation());
                                     string flag = Question();
                                     if("N" == flag)
                                     {
