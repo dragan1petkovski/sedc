@@ -6,7 +6,7 @@ namespace Homework.UI
 {
     internal static class UI
     {
-        public static bool UIChooser(Dictionary<DataObject, Delegate> inputOptions, dynamic User)
+        public static bool UIChooser<T>(Dictionary<DataObject, Delegate> inputOptions, T User)
         {
             Dictionary<int,DataObject> outputOptions = new Dictionary<int, DataObject>();
             int i = 1;
