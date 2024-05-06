@@ -29,23 +29,7 @@ namespace trybeingfit.UI
                     Console.WriteLine($"Debug1: {username}");
                     if (Database.Login(username, password, out User.User loggedInUser))
                     {
-                        if (loggedInUser.Role == RoleEnum.Standard)
-                        {
-                            exitLoginUI = !UI.UIChooser(loggedInUser);
-                        }
-                        else if (loggedInUser.Role == RoleEnum.Premium)
-                        {
-                            exitLoginUI = !UI.UIChooser(loggedInUser);
-                        }
-                        else if(loggedInUser.Role == RoleEnum.Trainer)
-                        {
-                            exitLoginUI = !UI.UIChooser(loggedInUser);
-                        }
-                        else
-                        {
-                            throw new Exception("Access Denied");
-                            
-                        }
+                        exitLoginUI = !UI.UIChooser(loggedInUser);
                     }
                     else
                     {

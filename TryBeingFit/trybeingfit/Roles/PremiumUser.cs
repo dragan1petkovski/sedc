@@ -24,12 +24,16 @@ namespace trybeingfit.Roles
                 Console.WriteLine($"{i}. {livevideo.scheduledTraining}\t-\t{livevideo.titleOfTheTraining}");
                 i++;
             }
-
+            Console.WriteLine($"{i}. Exit");
             do
             {
                 if (int.TryParse(Console.ReadLine(), out chooseVideo))
                 {
-                    if (displayVideos.TryGetValue(chooseVideo, out OnlineTraining live))
+                    if(chooseVideo == i)
+                    {
+                        break;
+                    }
+                    else if (displayVideos.TryGetValue(chooseVideo, out OnlineTraining live))
                     {
                         DateTime dateTimeNow = DateTime.Now;
                         if (live.scheduledTraining > dateTimeNow && live.scheduledTraining < dateTimeNow.AddMinutes(1))
@@ -40,6 +44,10 @@ namespace trybeingfit.Roles
                         {
                             Console.WriteLine($"Traning will start in {live.scheduledTraining - dateTimeNow}");
                         }
+                    }
+                    else
+                    {
+                        Console.WriteLine("You choose incorrect option");
                     }
                 }
                 else

@@ -19,17 +19,26 @@ namespace trybeingfit.Roles
             bool chooseAnotherVideoFlag;
             Dictionary<int, Video> DisplayVideos = GetAllVideoTrainings();
             int chooseVideo;
-
+            string inputChoice;
             do
             {
                 foreach (int i in DisplayVideos.Keys)
                 {
                     Console.WriteLine($"{i}. {DisplayVideos[i].title}");
                 }
+                Console.WriteLine($"{DisplayVideos.Keys.Count+1}. Exit");
                 Console.WriteLine("\n\nChoose Video");
-                if (int.TryParse(Console.ReadLine(), out chooseVideo))
+                inputChoice = Console.ReadLine();
+                if (int.TryParse(inputChoice, out chooseVideo))
                 {
-                    VideoAction(DisplayVideos[chooseVideo]);
+                    if(DisplayVideos.Keys.Count+1 == chooseVideo)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        VideoAction(DisplayVideos[chooseVideo]);
+                    }
                 }
                 else
                 {
