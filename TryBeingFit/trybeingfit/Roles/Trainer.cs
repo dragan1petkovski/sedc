@@ -118,7 +118,6 @@ namespace trybeingfit.Roles
                             trainingSchedule = Console.ReadLine();
                             if (DateTime.TryParseExact(trainingSchedule, "HH:mm dd.MM.yyyy", null, DateTimeStyles.None, out DateTime parsedTime))
                             {
-                                Console.WriteLine($"Debug1: {oldVideo.titleOfTheTraining}");
                                 OnlineTraining recheduledVideo = new OnlineTraining(parsedTime, oldVideo.titleOfTheTraining);
                                 onlineTrainings.Add(recheduledVideo);
                             }

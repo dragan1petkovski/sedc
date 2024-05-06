@@ -26,7 +26,6 @@ namespace trybeingfit.UI
                 
                 if(!string.IsNullOrEmpty(username) && !string.IsNullOrWhiteSpace(username))
                 {
-                    Console.WriteLine($"Debug1: {username}");
                     if (Database.Login(username, password, out User.User loggedInUser))
                     {
                         exitLoginUI = !UI.UIChooser(loggedInUser);
